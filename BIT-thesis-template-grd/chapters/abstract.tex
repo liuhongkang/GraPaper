@@ -1,0 +1,28 @@
+%%==================================================
+%% abstract.tex for BIT Master Thesis
+%% modified by yang yating
+%% version: 0.1
+%% last update: Dec 25th, 2016
+%%==================================================
+
+\begin{abstract}
+   目标检测是很多应用中重要的组成部分，然而在夜晚或者一些特殊环境下，可见光视频无法提供目标的有效信息，需要通过红外视频进行目标检测与追踪等任务。然而目前的红外视频中的小目标检测算法存在许多不足。首先是在复杂的背景状况下，已有算法检测效果不佳，误报率较高，准确率很低。其次，一些有效的红外视频小目标检测算法，在考虑检测效果的同时会牺牲掉时间效率和计算效率，导致检测算法效率低下，无法达到检测算法的实效性要求。
+
+   针对红外视频小目标检测方法在高度复杂的背景状况下，检测效果不佳的问题，分析得到如下两点原因：1）强边缘的干扰和其他类目标成分的相似性干扰，2）未能充分利用背景和目标在时间域和空间域内的上下文信息。基于这两点原因，本文提出首先在视频帧中滑动窗口；然后根据当前视频帧图像块与其时空邻域内的图像块组成一个时空立方体，并将时空立方体转换为时空张量模型；进一步，根据目标稀疏先验和背景局部相似性先验，目标-背景分离问题可以转换为低秩-稀疏张量分解问题；最后，张量分解得到的目标张量可以进一步重构为目标图像。实验表明，通过充分利用时空上下文信息，我们提出的检测方法在背景复杂的红外视频中具有更好的检测效果。
+
+   针对红外视频中小目标检测算法时间效率较低的问题，并结合本文提出的时空张量模型，本文提出一种基于区域推荐的加速检测算法。首先充分利用小目标在时序上的连续性，根据当前视频帧的预检测结果，为相邻后续视频帧提供搜索区域推荐，减少后续视频帧检测区域；然后，在本文提出的时空张量模型分解中，加入 Anderson Acceleration ADMM 算法，进一步提高时空张量分解速度。经过实验验证，本文提出的基于区域推荐的小目标检测算法，在保持原有效果的同时，时间效率大幅度提升，基本接近实时水平。
+
+\keywords{红外视频； 小目标检测； 时空张量模型； 安德森加速； 区域推荐 }
+\end{abstract}
+
+\begin{englishabstract}
+
+   Target detection is an important part of many applications. However, at night or in some special environments, visible videos cannot provide effective information about targets. So infrared videos are needed to perform target detection and tracking tasks. However, the existing small target detection methods in infrared videos have many shortcomings. Firstly, under complex background conditions, existing methods have poor detection results, high false alarm rates and low accuracy rates. Secondly, some effective small target detection algorithms in infrared videos, while considering the detection effect, will sacrifice time efficiency and calculation efficiency, resulting in low detection efficiency and failing to meet the practical requirements of detection methods.
+
+   Aiming at the problem that small target detection methods in infrared videos have a poor detection effect under highly complicated background conditions, the following two reasons are analyzed: i) interference from strong edges and similar interference from other similar target components; ii) the lack of the context information of both the background and the target in the spatio-temporal domain. By considering these two points, we proposes to slide slide a window in a single frame firstly and form a spatio-temporal cube with the current frame patch and other frame patches in the spatio-temporal domain. Then we transform the cube to a spatio-temporal tensor model. Further, According to the sparse prior of the target and the local correlation of the background, the separation of the target and the background can be cast as a low rank and sparse tensor decomposition problem. Finally, the sparse tensor obtained from tensor decomposition can be further reconstructed into the target image. The experiments show that our method gains better detection performance in infrared videos with highly complex background, by making full use of the spatio-temporal context information.
+
+   Aiming at the problem of low time efficiency of small target detection methods in infrared videos, combined with the spatio-temporal tensor model proposed in this paper, we propose an accelerated detection method for infrared small target based on region proposal. Firstly, making full use of the temporal continuity of small targets, search region proposal can be provided for subsequent frames based on the pre-detection results of current frame to reduce the detection area of subsequent frames. Then, the Anderson Acceleration ADMM algorithm is added in the process of the spatio-temporal tensor decomposition proposed by us to further accelerate the spatiotemporal tensor decomposition. After experimental verification, the small target detection method based on region proposal proposed in this paper maintains the original detection performance while greatly improving the time efficiency, which is basically close to the real-time level.
+   
+\englishkeywords{infrared videos; small target detection; spatio-temporal tensor model; anderson acceleration; region proposal}
+
+\end{englishabstract}
